@@ -5,19 +5,28 @@ import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.List;
 
 import javax.swing.JTextField;
+import javax.swing.ListModel;
 import javax.swing.JCheckBox;
+import javax.swing.JList;
+import javax.swing.JScrollPane;
+import javax.swing.JScrollBar;
 
 public class Main {
 
 	private JFrame frame;
 	private JTextField txtSearch;
+	private JTextField textField;
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		
+		
+		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -77,5 +86,23 @@ public class Main {
 		chckbxDesc.setFont(new Font("Comic Sans MS", Font.PLAIN, 15));
 		chckbxDesc.setBounds(128, 73, 70, 23);
 		frame.getContentPane().add(chckbxDesc);
+		
+		List<Word> jsonArray = GSONReadingFromFileExample.returnWords();
+		System.out.println(jsonArray);
+		
+		@SuppressWarnings("unchecked")
+		JList list_1 = new JList(jsonArray.toArray());
+		list_1.setLayoutOrientation(JList.VERTICAL);
+		list_1.setBounds(-19, 102, 188, 375);
+		frame.getContentPane().add(list_1);
+		
+		textField = new JTextField();
+		textField.setBounds(212, 14, 525, 478);
+		frame.getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		JScrollBar scrollBar = new JScrollBar();
+		scrollBar.setBounds(179, 121, 17, 48);
+		frame.getContentPane().add(scrollBar);
 	}
 }
