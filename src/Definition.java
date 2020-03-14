@@ -11,7 +11,7 @@ public class Definition {
 		this.definition = definition;
 	}
 	
-	public String getpartOfSpeech() {
+	public String getPartOfSpeech() {
         return partOfSpeech;
     }
 	
@@ -21,6 +21,6 @@ public class Definition {
 	
 	@Override
     public String toString() {
-    	return "Definitions: " +  definition + "\nPart of Speech: " + partOfSpeech;
+    	return definition + " (" + partOfSpeech + ")";
     }
 }

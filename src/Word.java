@@ -8,6 +8,10 @@ public class Word {
 	private List<String> synonyms;
 	private List<String> antonyms;
 	
+	public Word(String word) {
+		this.word = word;
+	}
+	
 	public String getWord() {
         return word;
     }
@@ -39,10 +43,9 @@ public class Word {
     public void setAntonyms(List<String> antonyms) {
         this.antonyms = antonyms;
     }
-    //Arrays.toString(definitions)
+
     @Override
     public String toString() {
     	return word;
-    	//return "Word: " + word + "\n" + definitions[0] + "\nSynonyms: " + synonyms + "\nAntonyms: " + antonyms + "\n";
     }
 }
